@@ -1,0 +1,347 @@
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f8fafc;
+    /* Light gray background for contrast */
+    color: #334155;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Sidebar (Simulated for now, or just a side panel) */
+.sidebar {
+    width: 260px;
+    background-color: #1e293b;
+    color: #fff;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--accent-color);
+}
+
+.navItem {
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+.navItem:hover,
+.navItem.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* Main Content Area */
+.mainContent {
+    flex: 1;
+    margin-left: 260px;
+    /* Width of sidebar */
+    padding: 2rem;
+    max-width: calc(100vw - 260px);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 1.5rem;
+    color: #1e293b;
+    margin: 0;
+}
+
+/* Stats Grid */
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.statCard {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+.statCard h3 {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.statCard p {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+/* Section Styles */
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.sectionHeader h2 {
+    font-size: 1.25rem;
+    color: #1e293b;
+    font-weight: 600;
+}
+
+/* Forms & Inputs */
+.inputGroup {
+    margin-bottom: 1rem;
+}
+
+.inputGroup input,
+.inputGroup textarea,
+.inputGroup select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+    background: #fff;
+    color: #334155;
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus,
+.inputGroup select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+/* Buttons */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    font-size: 0.95rem;
+}
+
+.btnPrimary {
+    background-color: #0f172a;
+    color: #fff;
+}
+
+.btnPrimary:hover {
+    background-color: #1e293b;
+}
+
+.btnOutline {
+    background-color: transparent;
+    border: 1px solid #cbd5e1;
+    color: #475569;
+}
+
+.btnOutline:hover {
+    background-color: #f1f5f9;
+    color: #1e293b;
+}
+
+/* Portfolio/Service Management Layout */
+.managementGrid {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    align-items: start;
+}
+
+.formCard {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    position: sticky;
+    top: 2rem;
+}
+
+.formCard h3 {
+    margin-bottom: 1.5rem;
+    color: #0f172a;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 1rem;
+}
+
+.listGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.itemCard {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.itemCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.itemImage {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    background: #f1f5f9;
+}
+
+.itemContent {
+    padding: 1rem;
+    flex: 1;
+}
+
+.itemContent h4 {
+    margin: 0 0 0.5rem 0;
+    color: #0f172a;
+    font-size: 1rem;
+}
+
+.itemMeta {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+}
+
+.itemActions {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+}
+
+.actionBtn {
+    flex: 1;
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s;
+}
+
+.editBtn {
+    background-color: #e2e8f0;
+    color: #475569;
+}
+
+.editBtn:hover {
+    background-color: #cbd5e1;
+}
+
+.toggleBtn {
+    background-color: #fef08a;
+    color: #854d0e;
+}
+
+.toggleBtn:hover {
+    background-color: #fde047;
+}
+
+.deleteBtn {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.deleteBtn:hover {
+    background-color: #fecaca;
+}
+
+/* Orders Table */
+.tableCard {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th {
+    background: #f8fafc;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #475569;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    color: #334155;
+}
+
+.statusBadge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: inline-block;
+}
+
+@media (max-width: 1024px) {
+    .managementGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .formCard {
+        position: static;
+    }
+
+    .sidebar {
+        display: none;
+        /* Hide sidebar on mobile for now */
+    }
+
+    .mainContent {
+        margin-left: 0;
+        max-width: 100%;
+    }
+}

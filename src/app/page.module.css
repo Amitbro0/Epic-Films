@@ -1,0 +1,196 @@
+.featuresSection {
+    padding: 6rem 0;
+    background-color: #0f172a;
+}
+
+.featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.featureCard {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+}
+
+.featureCard h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.servicesSection {
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+    /* Fallback */
+}
+
+.videoBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    /* Ensure clicks pass through */
+}
+
+.bgVideoFrame {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.5);
+    /* Zoom in slightly to avoid black bars */
+    opacity: 0.6;
+    /* Dim the video slightly */
+}
+
+.videoOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #0f172a 0%, rgba(15, 23, 42, 0.8) 20%, rgba(15, 23, 42, 0.8) 80%, #0f172a 100%);
+    z-index: 2;
+}
+
+.servicesTitle {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.servicesSubtitle {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    margin-bottom: 3rem;
+}
+
+.servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.portfolioSection {
+    padding: 6rem 0;
+    background-color: #0f172a;
+}
+
+.portfolioGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.portfolioItem {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.portfolioItem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.thumbnailWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.videoFrame {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.portfolioItem:hover .thumbnail {
+    transform: scale(1.05);
+}
+
+.playOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolioItem:hover .playOverlay {
+    opacity: 1;
+}
+
+.playButton {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #fff;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.playButton:hover {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.portfolioItem h3 {
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: left;
+    color: var(--text-color);
+}
+
+.ctaSection {
+    padding: 6rem 0;
+    background: linear-gradient(to bottom, var(--bg-color), #1e293b);
+}
+
+.ctaSection h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}

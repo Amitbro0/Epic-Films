@@ -1,0 +1,48 @@
+[2025-12-02T21:56:01.957Z] Received start request
+[2025-12-02T21:56:01.958Z] Project: 692f562856750de32d3bb826, Type: selected
+[2025-12-02T21:56:01.958Z] Job ID: 1764712561958, Zip Path: /var/folders/r4/lkdswps10wvb1bs26w4b91cm0000gn/T/job-1764712561958.zip
+[2025-12-02T21:56:01.958Z] Status updated for 1764712561958: starting 0%
+[2025-12-02T21:56:01.958Z] Starting background process for 1764712561958
+[2025-12-02T21:56:02.130Z] Found 7 photos
+[2025-12-02T21:56:02.130Z] Status updated for 1764712561958: processing 0%
+[2025-12-02T21:56:02.131Z] Processing 1/7: 1Bz0KtcrmjhXcSFo4YLxjE5Rtog-Kx0NC
+[2025-12-02T21:56:03.955Z] Status updated for 1764712561958: processing 14%
+[2025-12-02T21:56:03.955Z] Processing 2/7: 19f_8a8wO__bEvrL80ONIwj41--fnXhAa
+[2025-12-02T21:56:06.305Z] Status updated for 1764712561958: processing 29%
+[2025-12-02T21:56:06.305Z] Processing 3/7: 1UmUPnjWkjRzyRb1RwjoloXJvDlzjdP9w
+[2025-12-02T21:56:07.914Z] Status updated for 1764712561958: processing 43%
+[2025-12-02T21:56:07.914Z] Processing 4/7: 13BVFnfIzQQkD6myW5npZ4EOI7SQpNzXW
+[2025-12-02T21:56:10.941Z] Status updated for 1764712561958: processing 57%
+[2025-12-02T21:56:10.941Z] Processing 5/7: 1QwhX6DcbeCoAwfzbDS1NDgkgNfD3V372
+[2025-12-02T21:56:12.555Z] Status updated for 1764712561958: processing 71%
+[2025-12-02T21:56:12.555Z] Processing 6/7: 1gW1DiQRDsnJhy3shdRS483f8Pc_Zs5_G
+[2025-12-02T21:56:13.857Z] Status updated for 1764712561958: processing 86%
+[2025-12-02T21:56:13.857Z] Processing 7/7: 1u-2vSSDZ_WS95ncuAU5I-vgpsVLG6d4I
+[2025-12-02T21:56:15.525Z] Status updated for 1764712561958: processing 100%
+[2025-12-02T21:56:15.525Z] Finalizing archive for 1764712561958
+[2025-12-02T21:56:17.780Z] Zip finalized for 1764712561958
+[2025-12-02T21:56:17.781Z] Status updated for 1764712561958: completed 100%
+[2025-12-03T04:24:53.108Z] Received start request
+[2025-12-03T04:24:53.109Z] Project: 692f562856750de32d3bb826, Type: selected
+[2025-12-03T04:24:53.109Z] Job ID: 1764735893109, Zip Path: /var/folders/r4/lkdswps10wvb1bs26w4b91cm0000gn/T/job-1764735893109.zip
+[2025-12-03T04:24:53.109Z] Status updated for 1764735893109: starting 0%
+[2025-12-03T04:24:53.109Z] Starting background process for 1764735893109
+[2025-12-03T04:24:53.274Z] Found 7 photos
+[2025-12-03T04:24:53.275Z] Status updated for 1764735893109: processing 0%
+[2025-12-03T04:24:53.276Z] Processing 1/7: 1Bz0KtcrmjhXcSFo4YLxjE5Rtog-Kx0NC
+[2025-12-03T04:24:55.262Z] Status updated for 1764735893109: processing 14%
+[2025-12-03T04:24:55.262Z] Processing 2/7: 19f_8a8wO__bEvrL80ONIwj41--fnXhAa
+[2025-12-03T04:24:56.960Z] Status updated for 1764735893109: processing 29%
+[2025-12-03T04:24:56.960Z] Processing 3/7: 1UmUPnjWkjRzyRb1RwjoloXJvDlzjdP9w
+[2025-12-03T04:24:59.325Z] Status updated for 1764735893109: processing 43%
+[2025-12-03T04:24:59.326Z] Processing 4/7: 13BVFnfIzQQkD6myW5npZ4EOI7SQpNzXW
+[2025-12-03T04:25:01.069Z] Status updated for 1764735893109: processing 57%
+[2025-12-03T04:25:01.069Z] Processing 5/7: 1QwhX6DcbeCoAwfzbDS1NDgkgNfD3V372
+[2025-12-03T04:25:03.688Z] Status updated for 1764735893109: processing 71%
+[2025-12-03T04:25:03.688Z] Processing 6/7: 1gW1DiQRDsnJhy3shdRS483f8Pc_Zs5_G
+[2025-12-03T04:25:05.322Z] Status updated for 1764735893109: processing 86%
+[2025-12-03T04:25:05.323Z] Processing 7/7: 1u-2vSSDZ_WS95ncuAU5I-vgpsVLG6d4I
+[2025-12-03T04:25:07.024Z] Status updated for 1764735893109: processing 100%
+[2025-12-03T04:25:07.024Z] Finalizing archive for 1764735893109
+[2025-12-03T04:25:09.320Z] Zip finalized for 1764735893109
+[2025-12-03T04:25:09.321Z] Status updated for 1764735893109: completed 100%

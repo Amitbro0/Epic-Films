@@ -1,0 +1,67 @@
+.footer {
+    background-color: #020617;
+    border-top: 1px solid var(--border-color);
+    padding: 4rem 0 2rem;
+    color: var(--text-muted);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.column h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.column h4 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.column p {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.column a {
+    display: block;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s;
+}
+
+.column a:hover {
+    color: var(--accent-color);
+}
+
+.socials {
+    display: flex;
+    gap: 1rem;
+}
+
+.socialIcon {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    transition: color 0.3s;
+}
+
+.socialIcon:hover {
+    color: var(--accent-color);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+}
+
+.subtext {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}

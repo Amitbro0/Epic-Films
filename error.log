@@ -1,0 +1,22 @@
+TypeError: next_dist_server_web_exports_next_response__WEBPACK_IMPORTED_MODULE_3__.json is not a function
+TypeError: next_dist_server_web_exports_next_response__WEBPACK_IMPORTED_MODULE_3__.json is not a function
+    at GET (webpack-internal:///(rsc)/./src/app/api/site-config/route.js:25:88)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/proedithouse/Documents/Google AntiG/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:63809
+    at async eU.execute (/Users/proedithouse/Documents/Google AntiG/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:53964)
+    at async eU.handle (/Users/proedithouse/Documents/Google AntiG/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:65062)
+    at async doRender (/Users/proedithouse/Documents/Google AntiG/node_modules/next/dist/server/base-server.js:1333:42)
+    at async cacheEntry.responseCache.get.routeKind (/Users/proedithouse/Documents/Google AntiG/node_modules/next/dist/server/base-server.js:1555:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/Users/proedithouse/Documents/Google AntiG/node_modules/next/dist/server/base-server.js:1463:28)
+    at async DevServer.renderPageComponent (/Users/proedithouse/Documents/Google AntiG/node_modules/next/dist/server/base-server.js:1856:24)
+    at async DevServer.renderToResponseImpl (/Users/proedithouse/Documents/Google AntiG/node_modules/next/dist/server/base-server.js:1894:32)
+    at async DevServer.pipeImpl (/Users/proedithouse/Documents/Google AntiG/node_modules/next/dist/server/base-server.js:911:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/proedithouse/Documents/Google AntiG/node_modules/next/dist/server/next-server.js:271:17)
+    at async DevServer.handleRequestImpl (/Users/proedithouse/Documents/Google AntiG/node_modules/next/dist/server/base-server.js:807:17)
+    at async /Users/proedithouse/Documents/Google AntiG/node_modules/next/dist/server/dev/next-dev-server.js:331:20
+    at async Span.traceAsyncFn (/Users/proedithouse/Documents/Google AntiG/node_modules/next/dist/trace/trace.js:151:20)
+    at async DevServer.handleRequest (/Users/proedithouse/Documents/Google AntiG/node_modules/next/dist/server/dev/next-dev-server.js:328:24)
+    at async invokeRender (/Users/proedithouse/Documents/Google AntiG/node_modules/next/dist/server/lib/router-server.js:163:21)
+    at async handleRequest (/Users/proedithouse/Documents/Google AntiG/node_modules/next/dist/server/lib/router-server.js:342:24)
+    at async requestHandlerImpl (/Users/proedithouse/Documents/Google AntiG/node_modules/next/dist/server/lib/router-server.js:366:13)
+    at async Server.requestListener (/Users/proedithouse/Documents/Google AntiG/node_modules/next/dist/server/lib/start-server.js:140:13)

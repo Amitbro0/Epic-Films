@@ -1,0 +1,134 @@
+.formContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.formGroup label {
+    font-weight: 500;
+    color: #334155;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.error {
+    color: #ef4444;
+    font-size: 0.9rem;
+    padding: 0.75rem;
+    background: #fee2e2;
+    border-radius: 6px;
+}
+
+.successCard {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.orderId {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #15803d;
+    margin: 1rem 0;
+    font-family: monospace;
+    letter-spacing: 2px;
+}
+
+.whatsappBtn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    background: #25D366;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+
+.whatsappBtn:hover {
+    transform: scale(1.05);
+}
+
+.paymentBtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1.5rem;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: left;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.paymentBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.paymentBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btnContent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.btnContent strong {
+    font-size: 1.4rem;
+}
+
+.paymentBtn small {
+    align-self: flex-start;
+    opacity: 0.9;
+}
+
+.textBtn:hover {
+    text-decoration: underline;
+}
