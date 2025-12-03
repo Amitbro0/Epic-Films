@@ -7,10 +7,25 @@ const SCOPES = ['https://www.googleapis.com/auth/drive'];
 // User provided Folder ID
 const FOLDER_ID = '1p3fosDRYFE5BuB_5hJiutCFKCeie-xH0';
 
-const auth = new google.auth.GoogleAuth({
-    keyFile: KEY_FILE_PATH,
-    scopes: SCOPES,
-});
+let auth;
+if (process.env.GOOGLE_SERVICE_ACCOUNT_JSON) {
+    try {
+        const credentials = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_JSON);
+        auth = new google.auth.GoogleAuth({
+            credentials,
+            scopes: SCOPES,
+        });
+    } catch (e) {
+        console.error("Failed to parse GOOGLE_SERVICE_ACCOUNT_JSON", e);
+    }
+}
+
+if (!auth) {
+    auth = new google.auth.GoogleAuth({
+        keyFile: KEY_FILE_PATH,
+        scopes: SCOPES,
+    });
+}
 
 const drive = google.drive({ version: 'v3', auth });
 
