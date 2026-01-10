@@ -1,7 +1,6 @@
 import dbConnect from '@/lib/db';
 import Transfer from '@/models/Transfer';
 import styles from './page.module.css';
-import { notFound } from 'next/navigation';
 
 export default async function DownloadPage({ params }) {
     await dbConnect();
@@ -12,8 +11,8 @@ export default async function DownloadPage({ params }) {
             <div className={styles.container}>
                 <div className={styles.card}>
                     <div className={styles.icon}>⚠️</div>
-                    <h2>Link Expired</h2>
-                    <p>This transfer link is no longer valid.</p>
+                    <h2 className={styles.title} style={{ fontSize: '2rem' }}>Link Expired</h2>
+                    <p style={{ color: '#94a3b8' }}>This transfer link is no longer valid.</p>
                 </div>
             </div>
         );
@@ -34,24 +33,24 @@ export default async function DownloadPage({ params }) {
                 <div className={styles.icon}>📦</div>
                 <h1 className={styles.title}>Ready to Download</h1>
 
-                <div style={{ background: '#f8fafc', padding: '1.5rem', borderRadius: '12px', margin: '2rem 0', textAlign: 'left' }}>
-                    <div style={{ marginBottom: '0.5rem' }}>
-                        <span style={{ color: '#64748b', fontSize: '0.9rem' }}>Filename</span>
-                        <div style={{ fontWeight: '600', color: '#0f172a' }}>{transfer.filename}</div>
+                <div className={styles.fileDetails}>
+                    <div className={styles.detailRow}>
+                        <span className={styles.label}>Filename</span>
+                        <div className={styles.value}>{transfer.filename}</div>
                     </div>
-                    <div style={{ marginBottom: '0.5rem' }}>
-                        <span style={{ color: '#64748b', fontSize: '0.9rem' }}>Size</span>
-                        <div style={{ fontWeight: '600', color: '#0f172a' }}>{formatSize(transfer.size)}</div>
+                    <div className={styles.detailRow}>
+                        <span className={styles.label}>Size</span>
+                        <div className={styles.value}>{formatSize(transfer.size)}</div>
                     </div>
                     {transfer.message && (
-                        <div style={{ marginBottom: '0.5rem' }}>
-                            <span style={{ color: '#64748b', fontSize: '0.9rem' }}>Message</span>
-                            <div style={{ color: '#334155' }}>{transfer.message}</div>
+                        <div className={styles.detailRow}>
+                            <span className={styles.label}>Message</span>
+                            <div className={styles.value} style={{ fontWeight: '400' }}>{transfer.message}</div>
                         </div>
                     )}
-                    <div>
-                        <span style={{ color: '#64748b', fontSize: '0.9rem' }}>Expires On</span>
-                        <div style={{ color: '#ef4444', fontSize: '0.9rem' }}>
+                    <div className={styles.detailRow}>
+                        <span className={styles.label}>Expires On</span>
+                        <div className={styles.value} style={{ color: '#ef4444' }}>
                             {new Date(transfer.expiresAt).toLocaleDateString()}
                         </div>
                     </div>
@@ -60,7 +59,6 @@ export default async function DownloadPage({ params }) {
                 <a
                     href={`/api/transfer/download/${transfer._id}`}
                     className={styles.uploadBtn}
-                    style={{ display: 'block', textDecoration: 'none', lineHeight: '1.5' }}
                 >
                     Download File
                 </a>

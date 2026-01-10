@@ -1,79 +1,271 @@
 .container {
     min-height: 100vh;
-    background: radial-gradient(circle at top right, #1e293b, #0f172a);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    color: white;
+    background: radial-gradient(circle at center, #1e293b 0%, #020617 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Animated Background Blobs */
+.container::before,
+.container::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    opacity: 0.5;
+    animation: float 10s infinite alternate;
+}
+
+.container::before {
+    background: var(--accent-color);
+    top: -50px;
+    left: -50px;
+}
+
+.container::after {
+    background: #8b5cf6;
+    /* Violet */
+    bottom: -50px;
+    right: -50px;
+    animation-delay: -5s;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(30px, 30px);
+    }
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 24px;
     padding: 3rem;
     width: 100%;
-    max-width: 600px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
     text-align: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
 }
 
 .title {
     font-size: 2.5rem;
     font-weight: 800;
-    background: linear-gradient(to right, #4ade80, #3b82f6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     margin-bottom: 0.5rem;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .subtitle {
-    color: #94a3b8;
+    color: var(--text-muted);
     margin-bottom: 2rem;
-}
-
-.toggleContainer {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 5px;
-    border-radius: 12px;
-    display: inline-flex;
-}
-
-.toggleBtn {
-    background: transparent;
-    border: none;
-    color: #94a3b8;
-    padding: 8px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s;
-}
-
-.toggleBtn.active {
-    background: #3b82f6;
-    color: white;
-}
-
-.uploadBtn {
-    width: 100%;
-    padding: 1rem;
-    background: linear-gradient(to right, #4ade80, #3b82f6);
-    border: none;
-    border-radius: 12px;
-    color: white;
     font-size: 1.1rem;
-    font-weight: 700;
+}
+
+.dropzone {
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 3rem 2rem;
     cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.dropzone:hover,
+.dropzone.dragActive {
+    border-color: var(--accent-color);
+    background: rgba(212, 175, 55, 0.05);
+    transform: scale(1.02);
+}
+
+.icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+.dropzone:hover .icon {
+    transform: translateY(-10px);
+}
+
+.fileInfo {
     margin-top: 1rem;
 }
 
+.fileName {
+    font-weight: 600;
+    color: #fff;
+    word-break: break-all;
+}
+
+.fileSize {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.uploadBtn {
+    margin-top: 2rem;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 12px;
+    border: none;
+    background: var(--accent-color);
+    color: #000;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.uploadBtn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -10px var(--accent-color);
+}
+
+.uploadBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Progress Bar */
+.progressContainer {
+    margin-top: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    height: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progressBar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color), #f59e0b);
+    width: 0%;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.progressText {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Success State */
+.success {
+    margin-top: 2rem;
+    animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.linkBox {
+    display: flex;
+    gap: 0.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 1rem;
+}
+
+.linkInput {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    outline: none;
+}
+
+.copyBtn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.copyBtn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.error {
+    color: #ef4444;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    background: rgba(239, 68, 68, 0.1);
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+/* Toggle Styles */
+.toggleContainer {
+    display: flex;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    gap: 0.5rem;
+}
+
+.toggleBtn {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggleBtn.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* P2P Styles */
 .idBox {
     background: rgba(0, 0, 0, 0.3);
     padding: 1rem;
@@ -84,32 +276,12 @@
 
 .code {
     font-family: monospace;
-    font-size: 1.2rem;
-    color: #4ade80;
+    font-size: 1.5rem;
+    color: var(--accent-color);
     margin: 0.5rem 0;
+    letter-spacing: 2px;
+    font-weight: 700;
     word-break: break-all;
-}
-
-.tabs {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 1.5rem;
-}
-
-.tabs button {
-    flex: 1;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.05);
-    border: none;
-    color: #94a3b8;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.tabs button.activeTab {
-    background: rgba(255, 255, 255, 0.15);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .input {
@@ -118,48 +290,47 @@
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    color: white;
+    color: #fff;
+    font-size: 1rem;
     margin-bottom: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
 }
 
-.status {
-    margin-top: 1rem;
-    color: #fbbf24;
-    font-weight: bold;
+.input:focus {
+    border-color: var(--accent-color);
 }
 
-.progressBar {
-    height: 6px;
-    background: #4ade80;
-    border-radius: 3px;
-    margin-top: 1rem;
-    transition: width 0.3s;
+.tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
 }
 
-.dropzone {
-    border: 2px dashed rgba(255, 255, 255, 0.2);
-    padding: 3rem;
-    border-radius: 16px;
+.tabBtn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
 }
 
-.dropzone:hover {
-    border-color: #4ade80;
-    background: rgba(74, 222, 128, 0.05);
+.tabBtn.activeTab {
+    color: var(--accent-color);
+    position: relative;
 }
 
-.error {
-    color: #ef4444;
-    margin-top: 1rem;
-}
-
-.success input {
+.tabBtn.activeTab::after {
+    content: '';
+    position: absolute;
+    bottom: -1.1rem;
+    left: 0;
     width: 100%;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid #4ade80;
-    color: #4ade80;
-    border-radius: 8px;
-    margin-top: 0.5rem;
+    height: 2px;
+    background: var(--accent-color);
 }

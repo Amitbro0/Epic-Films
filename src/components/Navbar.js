@@ -7,33 +7,46 @@ import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
-    const { scrollY } = useScroll();
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    useMotionValueEvent(scrollY, "change", (latest) => {
-        setIsScrolled(latest > 50);
-    });
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
 
     return (
-        <motion.nav
-            className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.5 }}
-        >
+        <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
             <div className={`container ${styles.navContainer}`}>
                 <Link href="/" className={styles.logo}>
-                    {siteConfig.studioName}
+                    Epic Films
                 </Link>
-                <div className={styles.navLinks}>
-                    <Link href="/#services">Services</Link>
-                    <Link href="/selection">Photo Selection</Link>
-                    <Link href="/#portfolio">Portfolio</Link>
-                    <Link href="/#pricing">Pricing</Link>
-                    <Link href="/plik">Transfer</Link>
-                    <Link href="/status">Check Status</Link>
-                    <Link href="/book" className="btn btn-primary" style={{ padding: '8px 16px', fontSize: '0.9rem' }}>Book Now</Link>
+
+                <div className={styles.hamburger} onClick={toggleMobileMenu}>
+                    <span className={styles.bar}></span>
+                    <span className={styles.bar}></span>
+                    <span className={styles.bar}></span>
+                </div>
+
+                <div className={`${styles.navLinks} ${isMobileMenuOpen ? styles.active : ''}`}>
+                    <Link href="#services" onClick={() => setIsMobileMenuOpen(false)}>Services</Link>
+                    <Link href="#portfolio" onClick={() => setIsMobileMenuOpen(false)}>Portfolio</Link>
+                    <Link href="/plik" onClick={() => setIsMobileMenuOpen(false)}>Transfer</Link>
+                    <Link href="/status" onClick={() => setIsMobileMenuOpen(false)}>Track Order</Link>
+                    <Link href="#contact" className="btn btn-primary" onClick={() => setIsMobileMenuOpen(false)}>Book Now</Link>
                 </div>
             </div>
-        </motion.nav>
+        </nav>
     );
 }
