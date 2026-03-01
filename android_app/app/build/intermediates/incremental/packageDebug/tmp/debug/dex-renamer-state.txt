@@ -1,0 +1,7 @@
+#Thu Feb 26 10:55:05 IST 2026
+base.0=/Users/proedithouse/Documents/Google AntiG/android_app/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.1=/Users/proedithouse/Documents/Google AntiG/android_app/app/build/intermediates/dex/debug/mergeProjectDexDebug/2/classes.dex
+path.0=0/classes.dex
+path.1=2/classes.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex

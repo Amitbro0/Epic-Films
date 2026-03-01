@@ -17,7 +17,7 @@ export async function GET(req) {
         let pageToken = null;
 
         do {
-            const query = `'${folderId}' in parents and mimeType contains 'image/' and trashed = false`;
+            const query = `'${folderId}' in parents and trashed = false`;
             const url = new URL('https://www.googleapis.com/drive/v3/files');
             url.searchParams.append('q', query);
             url.searchParams.append('fields', 'nextPageToken, files(id, name, thumbnailLink)');

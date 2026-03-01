@@ -1,0 +1,7 @@
+com.photo.selection.app-pngs-0 /Users/proedithouse/Documents/Google AntiG/android_app/app/build/generated/res/pngs/debug
+com.photo.selection.app-resValues-1 /Users/proedithouse/Documents/Google AntiG/android_app/app/build/generated/res/resValues/debug
+com.photo.selection.app-packageDebugResources-2 /Users/proedithouse/Documents/Google AntiG/android_app/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.photo.selection.app-packageDebugResources-3 /Users/proedithouse/Documents/Google AntiG/android_app/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.photo.selection.app-debug-4 /Users/proedithouse/Documents/Google AntiG/android_app/app/build/intermediates/merged_res/debug/mergeDebugResources
+com.photo.selection.app-debug-5 /Users/proedithouse/Documents/Google AntiG/android_app/app/src/debug/res
+com.photo.selection.app-main-6 /Users/proedithouse/Documents/Google AntiG/android_app/app/src/main/res
