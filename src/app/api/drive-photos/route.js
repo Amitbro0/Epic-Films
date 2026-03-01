@@ -8,7 +8,7 @@ export async function GET(req) {
         }
 
         // Vercel deployment variables sometimes need to be accessed explicitly
-        const apiKey = process.env.GOOGLE_API_KEY || process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
+        const apiKey = (process.env.GOOGLE_API_KEY || process.env.NEXT_PUBLIC_GOOGLE_API_KEY || '').trim();
         if (!apiKey) {
             return Response.json({ message: 'API Key not configured on server' }, { status: 500 });
         }
