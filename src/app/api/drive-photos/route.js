@@ -1,5 +1,3 @@
-import { google } from 'googleapis';
-
 export async function GET(req) {
     try {
         const { searchParams } = new URL(req.url);
@@ -15,22 +13,29 @@ export async function GET(req) {
             return Response.json({ message: 'API Key not configured on server' }, { status: 500 });
         }
 
-        const drive = google.drive({ version: 'v3', auth: apiKey });
-
         let allFiles = [];
         let pageToken = null;
 
         do {
-            const response = await drive.files.list({
-                q: `'${folderId}' in parents and mimeType contains 'image/' and trashed = false`,
-                fields: 'nextPageToken, files(id, name, thumbnailLink)',
-                pageSize: 1000,
-                pageToken: pageToken || undefined,
-            });
+            const query = `'${folderId}' in parents and mimeType contains 'image/' and trashed = false`;
+            const url = new URL('https://www.googleapis.com/drive/v3/files');
+            url.searchParams.append('q', query);
+            url.searchParams.append('fields', 'nextPageToken, files(id, name, thumbnailLink)');
+            url.searchParams.append('pageSize', '1000');
+            url.searchParams.append('key', apiKey);
+            if (pageToken) url.searchParams.append('pageToken', pageToken);
 
-            const files = response.data.files || [];
+            const response = await fetch(url.toString());
+            const data = await response.json();
+
+            if (!response.ok) {
+                console.error("Drive REST Error:", data);
+                throw new Error(data.error?.message || 'Failed to fetch from Google Drive REST API');
+            }
+
+            const files = data.files || [];
             allFiles = allFiles.concat(files);
-            pageToken = response.data.nextPageToken;
+            pageToken = data.nextPageToken;
         } while (pageToken);
 
         const photos = allFiles.map((file, index) => ({
